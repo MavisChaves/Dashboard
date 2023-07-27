@@ -54,7 +54,7 @@ html{
     width: 96%;
     margin: 0 auto;
     gap:1.8rem;
-    grid-template-columns: 10rem auto23rem;
+    grid-template-columns: 16rem auto 23rem;
 }
 a{
     color: var(--color-dark);
@@ -65,7 +65,7 @@ img{
 }
 h1{
     font-weight:800;
-    font-size: 1.8rem;
+    font-size:1.8rem;
 }
 h2{
     font-size: 1.4rem;
