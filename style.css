@@ -26,6 +26,16 @@
 
   
 }
+/* Temas Dark */
+    .dark-theme-variables{
+        --color-background:#181a1e;
+        --color-white:#202528;
+        --color-dark:#edeffd;
+        --color-dark-variant:#a3bdcc;
+        --color-light: rgba(0, 0, 0, 0.4);
+        --box-shadow: 0 2rem 3rem varO(--color-light)
+    }
+
 *{
     margin:0;
     padding: 0;
@@ -119,7 +129,6 @@ aside{
     width: 12vw;
 }
 aside .top{
-    background: white;
     width: 100%;
     display: flex;
     align-items: center;
@@ -250,7 +259,6 @@ aside .sidebar .message-count{
 main .insights > div.income expenses span{
     background: var(--color-success);
 }
-/* CSS para animar o card quando o mouse passar sobre ele */
 main .insights > div {
     transition: box-shadow 0.3s ease;
     cursor: pointer;
@@ -569,13 +577,17 @@ main .recent-order a:hover {
 /* -------------------- Media Query 2 ----------------------*/
 
 @media screen and (max-width: 768px) {
+   
+    body{
+        padding: 10%;
+    }
     .container{
         width: 100%;
         grid-template-columns: 1fr;
     }
     aside {
         position:fixed;
-        left: 0;
+        left: -100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -583,6 +595,12 @@ main .recent-order a:hover {
         height: 100vh;
         padding-right:var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu{
+        to {
+            left: 0;
+        }
     }
     aside .logo{
        margin-left: 1rem;
