@@ -22,3 +22,23 @@ themeToggler.addEventListener('click',function () {
         themeToggler.querySelector('span:nth-child(2)').classList.toggle('active')
         
     })
+
+    /* Preencher Pedidos na tabela*/
+    document.addEventListener('DOMContentLoaded', () => {
+        const tbody = document.querySelector('table tbody');
+        tbody.innerHTML = ''; // Limpar o conteúdo existente da tabela, se houver
+    
+        Orders.forEach((order) => {
+            const tr = document.createElement('tr');
+            const trContent = `
+                <td>${order.productName}</td>
+                <td>${order.productNumber}</td>
+                <td>${order.paymentStatus}</td>
+                <td class="${order.shipping === 'Recusado' ? 'danger' : order.shipping === 'Pendente' ? 'warning' : 'primary'}">${order.shipping}</td>
+                <td class="primary"> Detalhes</td>
+            `;
+            tr.innerHTML = trContent;
+            tbody.appendChild(tr); // Adicionar a linha à tabela
+        });
+    });
+    
